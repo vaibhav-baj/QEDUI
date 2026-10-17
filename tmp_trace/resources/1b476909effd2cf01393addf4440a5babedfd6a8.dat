@@ -1,0 +1,12 @@
+data: {"type":"start","message":"Generating Lean response..."}
+
+data: {"type":"chunk","text":"I checked the current Lean pro"}
+
+data: {"type":"chunk","text":"of state and captured the rema"}
+
+data: {"type":"chunk","text":"ining diagnostics for the next"}
+
+data: {"type":"chunk","text":" fix."}
+
+data: {"type":"done","payload":{"ok":true,"response":"I checked the current Lean proof state and captured the remaining diagnostics for the next fix.","agent":"LeanCompiler:academic-cloud","suggestions":["intro","simp","exact","cases","rw"],"proofState":"Proof state: the Lean file parsed and compiled successfully.","streamText":"I checked the current Lean proof state and captured the remaining diagnostics for the next fix.","provider":"academic-cloud","updatedCode":"import Mathlib\n\nexample (n : Nat) : n + 0 = n := by\n  simp\n","decision":"compiler","toolsUsed":["compile_lean"],"note":"Compiler decision path selected because the user explicitly asked to validate or inspect the Lean proof state.","missingThings":[],"improvements":["formalize the theorem statement and close the final goal"],"nextActions":["apply tactic improvement","validate with compiler"]}}
+

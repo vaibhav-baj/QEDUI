@@ -1,0 +1,1 @@
+{"message":"formalize handshake lemma","code":"import Mathlib\n\nexample (n : Nat) : n + 0 = n := by\n  simp\n","provider":"academic-cloud","sessionId":"lean-session-1791223344681-568072ca8d2cd8","history":[{"role":"assistant","text":"Lean 4 IDE ready. Compile, inspect the proof state, or ask for tactic help."},{"role":"user","text":"formalize handshake lemma"}]}

@@ -1,0 +1,116 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: lean-editor-flow.spec.js >> Lean 4 editor agent >> user can load the IDE, send a prompt, see assistant output, and update code in the editor
+- Location: tests\e2e\lean-editor-flow.spec.js:12:7
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'Editor Agent' })
+Expected: visible
+Timeout: 20000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByRole('heading', { name: 'Editor Agent' }) with timeout 20000ms
+  - waiting for getByRole('heading', { name: 'Editor Agent' })
+
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | const leanPrompt = 'formalize handshake lemma';
+  4  | 
+  5  | const waitForEditorReady = async (page) => {
+> 6  |   await expect(page.getByRole('heading', { name: 'Editor Agent' })).toBeVisible();
+     |                                                                     ^ Error: expect(locator).toBeVisible() failed
+  7  |   await expect(page.getByTestId('chat-input')).toBeVisible();
+  8  |   await expect(page.locator('.monaco-editor')).toBeVisible();
+  9  | };
+  10 | 
+  11 | test.describe('Lean 4 editor agent', () => {
+  12 |   test('user can load the IDE, send a prompt, see assistant output, and update code in the editor', async ({ page }) => {
+  13 |     await page.goto('/');
+  14 |     await waitForEditorReady(page);
+  15 | 
+  16 |     const providerSelect = page.getByTestId('provider-select');
+  17 |     await expect(providerSelect).toBeVisible();
+  18 |     await providerSelect.selectOption('academic-cloud');
+  19 | 
+  20 |     const input = page.getByTestId('chat-input');
+  21 |     await input.fill(leanPrompt);
+  22 |     await page.getByTestId('send-button').click();
+  23 | 
+  24 |     await expect(page.getByText('formalize handshake lemma')).toBeVisible();
+  25 | 
+  26 |     // Streaming check: assistant bubble should begin receiving text quickly
+  27 |     const assistantBubble = page.locator('.chat-bubble.assistant').last();
+  28 |     await expect(assistantBubble).not.toHaveText('', { timeout: 8000 });
+  29 | 
+  30 |     // Confirm session id is persisted in sessionStorage
+  31 |     const sessionId = await page.evaluate(() => window.sessionStorage.getItem('lean4-editor-session-id'));
+  32 |     expect(sessionId).toBeTruthy();
+  33 | 
+  34 |     // Wait for final assistant response to appear
+  35 |     await expect(assistantBubble).toBeVisible({ timeout: 40000 });
+  36 | 
+  37 |     await expect(page.locator('.status-pill')).toContainText(/(LLM|EDIT|COMPILER|AGENT)/i, { timeout: 40000 });
+  38 | 
+  39 |     const editor = page.locator('.monaco-editor').nth(0);
+  40 |     await expect(editor).toBeVisible();
+  41 | 
+  42 |     const codeText = await page.evaluate(() => {
+  43 |       const editorNode = document.querySelector('.monaco-editor');
+  44 |       if (!editorNode) return '';
+  45 |       return editorNode.innerText || document.body.innerText;
+  46 |     });
+  47 | 
+  48 |     expect(codeText.toLowerCase()).toContain('import');
+  49 |     expect(codeText.toLowerCase()).toContain('example');
+  50 |   });
+  51 | 
+  52 |   test('user can ask for code update and trigger compile flow from the browser UI', async ({ page }) => {
+  53 |     await page.goto('/');
+  54 |     await waitForEditorReady(page);
+  55 | 
+  56 |     await page.getByTestId('chat-input').fill('rewrite this theorem to use exact rfl');
+  57 |     await page.getByTestId('send-button').click();
+  58 | 
+  59 |     await expect(page.locator('.chat-bubble.user').last()).toContainText('rewrite this theorem to use exact rfl');
+  60 | 
+  61 |     const assistantReply = page.locator('.chat-bubble.assistant').last();
+  62 |     // Streaming check for assistant reply
+  63 |     await expect(assistantReply).not.toHaveText('', { timeout: 8000 });
+  64 |     await expect(assistantReply).toBeVisible({ timeout: 40000 });
+  65 | 
+  66 |     await page.getByTestId('compile-button').click();
+  67 |     await expect(page.locator('.status-pill')).toContainText(/(Compilation|success|error)/i, { timeout: 20000 });
+  68 |   });
+  69 | 
+  70 |   test('user can use AI suggestions and apply tactic chips in the editor', async ({ page }) => {
+  71 |     await page.goto('/');
+  72 |     await waitForEditorReady(page);
+  73 | 
+  74 |     const suggestionChip = page.locator('.suggestion-chip').first();
+  75 |     if (await suggestionChip.count()) {
+  76 |       await suggestionChip.click();
+  77 |       const value = await page.locator('.monaco-editor').textContent();
+  78 |       expect(value.length).toBeGreaterThan(0);
+  79 |     }
+  80 | 
+  81 |     await expect(page.locator('.suggestion-chip')).toHaveCount(await page.locator('.suggestion-chip').count());
+  82 |   });
+  83 | });
+  84 | 
+```

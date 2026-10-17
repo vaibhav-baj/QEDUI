@@ -1,0 +1,16 @@
+{
+  "name": "lean4-editor-backend",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.19.2",
+    "lean4-editor-agent": "file:.."
+  }
+}

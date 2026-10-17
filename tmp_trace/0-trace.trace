@@ -1,0 +1,1 @@
+{"version":9,"type":"context-options","origin":"library","browserName":"","playwrightVersion":"1.63.0","options":{},"platform":"win32","wallTime":1791223341167,"monotonicTime":10564.817,"sdkLanguage":"javascript","title":"lean-editor-flow.spec.js:12 › Lean 4 editor agent › user can load the IDE, send a prompt, see assistant output, and update code in the editor"}

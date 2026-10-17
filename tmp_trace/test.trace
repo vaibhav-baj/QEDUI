@@ -1,0 +1,71 @@
+{"version":9,"type":"context-options","origin":"testRunner","browserName":"","playwrightVersion":"1.63.0","options":{},"platform":"win32","wallTime":1791223340038,"monotonicTime":9435.867,"sdkLanguage":"javascript","testTimeout":120000,"annotations":[]}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":9523.445,"class":"Test","method":"hook","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@30","stepId":"fixture@30","parentId":"hook@1","startTime":9573.792,"class":"Test","method":"fixture","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@31","stepId":"pw:api@31","parentId":"fixture@30","startTime":9584.785,"class":"Test","method":"pw:api","title":"Launch browser","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@31","endTime":10481.599,"annotations":[]}
+{"type":"after","callId":"fixture@30","endTime":10482.182,"annotations":[]}
+{"type":"before","callId":"fixture@34","stepId":"fixture@34","parentId":"hook@1","startTime":10486.459,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@35","stepId":"pw:api@35","parentId":"fixture@34","startTime":10491.296,"class":"Test","method":"pw:api","title":"Create context","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@35","endTime":10544.925,"annotations":[]}
+{"type":"after","callId":"fixture@34","endTime":10597.67,"annotations":[]}
+{"type":"before","callId":"fixture@36","stepId":"fixture@36","parentId":"hook@1","startTime":10598.717,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@37","stepId":"pw:api@37","parentId":"fixture@36","startTime":10602.497,"class":"Test","method":"pw:api","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@37","endTime":11133.695,"annotations":[]}
+{"type":"after","callId":"fixture@36","endTime":11133.937,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":11134.157,"annotations":[]}
+{"type":"before","callId":"pw:api@38","stepId":"pw:api@38","startTime":11137.475,"class":"Test","method":"pw:api","title":"Navigate","subtitle":"/","params":{"url":"/"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":14,"column":29}]}
+{"type":"after","callId":"pw:api@38","endTime":14268.75,"annotations":[]}
+{"type":"before","callId":"expect@39","stepId":"expect@39","startTime":14286.544,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","subtitle":"getByRole('heading', { name: 'Editor Agent' })","params":{"locator":"getByRole('heading', { name: 'Editor Agent' })"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":6,"column":69,"function":"waitForEditorReady"}]}
+{"type":"after","callId":"expect@39","endTime":14463.678,"annotations":[]}
+{"type":"before","callId":"expect@40","stepId":"expect@40","startTime":14466.847,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","subtitle":"getByTestId('chat-input')","params":{"locator":"getByTestId('chat-input')"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":7,"column":48,"function":"waitForEditorReady"}]}
+{"type":"after","callId":"expect@40","endTime":14623.225,"annotations":[]}
+{"type":"before","callId":"expect@41","stepId":"expect@41","startTime":14636.671,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","subtitle":"locator('.monaco-editor')","params":{"locator":"locator('.monaco-editor')"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":8,"column":48,"function":"waitForEditorReady"}]}
+{"type":"after","callId":"expect@41","endTime":21277.352,"annotations":[]}
+{"type":"before","callId":"expect@42","stepId":"expect@42","startTime":21279.069,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","subtitle":"getByTestId('provider-select')","params":{"locator":"getByTestId('provider-select')"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":19,"column":34}]}
+{"type":"after","callId":"expect@42","endTime":21296.659,"annotations":[]}
+{"type":"before","callId":"pw:api@43","stepId":"pw:api@43","startTime":21298.631,"class":"Test","method":"pw:api","title":"Select option","subtitle":"getByTestId('provider-select')","params":{"locator":"getByTestId('provider-select')","options":"[Object]"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":20,"column":26}]}
+{"type":"after","callId":"pw:api@43","endTime":21346.157,"annotations":[]}
+{"type":"before","callId":"pw:api@44","stepId":"pw:api@44","startTime":21348.133,"class":"Test","method":"pw:api","title":"Fill \"formalize handshake lemma\"","subtitle":"getByTestId('chat-input')","params":{"locator":"getByTestId('chat-input')","value":"formalize handshake lemma"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":23,"column":17}]}
+{"type":"after","callId":"pw:api@44","endTime":21394.3,"annotations":[]}
+{"type":"before","callId":"pw:api@45","stepId":"pw:api@45","startTime":21397.056,"class":"Test","method":"pw:api","title":"Click","subtitle":"getByTestId('send-button')","params":{"locator":"getByTestId('send-button')"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":24,"column":43}]}
+{"type":"after","callId":"pw:api@45","endTime":21681.915,"annotations":[]}
+{"type":"before","callId":"expect@46","stepId":"expect@46","startTime":21683.703,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","subtitle":"getByText('formalize handshake lemma')","params":{"locator":"getByText('formalize handshake lemma')"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":26,"column":63}]}
+{"type":"after","callId":"expect@46","endTime":21705.314,"annotations":[]}
+{"type":"before","callId":"expect@47","stepId":"expect@47","startTime":21710.97,"class":"Test","method":"expect","title":"Expect \"not toHaveText\"","subtitle":"locator('.chat-bubble.assistant').last()","params":{"locator":"locator('.chat-bubble.assistant').last()"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":30,"column":39}]}
+{"type":"after","callId":"expect@47","endTime":21736.707,"annotations":[]}
+{"type":"before","callId":"pw:api@48","stepId":"pw:api@48","startTime":21738.362,"class":"Test","method":"pw:api","title":"Evaluate","params":{},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":33,"column":34}]}
+{"type":"after","callId":"pw:api@48","endTime":21754.839,"annotations":[]}
+{"type":"before","callId":"expect@49","stepId":"expect@49","startTime":21756.11,"class":"Test","method":"expect","title":"Expect \"toBeTruthy\"","params":{},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":34,"column":23}]}
+{"type":"after","callId":"expect@49","endTime":21757.008,"annotations":[]}
+{"type":"before","callId":"expect@50","stepId":"expect@50","startTime":21759.082,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","subtitle":"locator('.chat-bubble.assistant').last()","params":{"locator":"locator('.chat-bubble.assistant').last()","expected":"Object"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":37,"column":35}]}
+{"type":"after","callId":"expect@50","endTime":21777.114,"annotations":[]}
+{"type":"before","callId":"expect@51","stepId":"expect@51","startTime":21778.624,"class":"Test","method":"expect","title":"Expect \"toContainText\"","subtitle":"locator('.status-pill')","params":{"locator":"locator('.status-pill')","expected":"Object"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":39,"column":48}]}
+{"type":"after","callId":"expect@51","endTime":52673.064,"annotations":[]}
+{"type":"before","callId":"expect@52","stepId":"expect@52","startTime":52674.928,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","subtitle":"locator('.monaco-editor').first()","params":{"locator":"locator('.monaco-editor').first()"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":42,"column":26}]}
+{"type":"after","callId":"expect@52","endTime":52704.841,"annotations":[]}
+{"type":"before","callId":"pw:api@53","stepId":"pw:api@53","startTime":52706.228,"class":"Test","method":"pw:api","title":"Evaluate","params":{},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":44,"column":33}]}
+{"type":"after","callId":"pw:api@53","endTime":52739.812,"annotations":[]}
+{"type":"before","callId":"expect@54","stepId":"expect@54","startTime":52740.803,"class":"Test","method":"expect","title":"Expect \"toContain\"","params":{"expected":"import"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":50,"column":36}]}
+{"type":"after","callId":"expect@54","endTime":52741.429,"annotations":[]}
+{"type":"before","callId":"expect@55","stepId":"expect@55","startTime":52742.574,"class":"Test","method":"expect","title":"Expect \"toContain\"","params":{"expected":"example"},"stack":[{"file":"C:\\Users\\lenovo\\Documents\\Git\\QEDUI\\tests\\e2e\\lean-editor-flow.spec.js","line":51,"column":36}]}
+{"type":"after","callId":"expect@55","endTime":52744.121,"annotations":[]}
+{"type":"before","callId":"hook@56","stepId":"hook@56","startTime":52745.333,"class":"Test","method":"hook","title":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@57","stepId":"fixture@57","parentId":"hook@56","startTime":52747.972,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@57","endTime":52748.715,"annotations":[]}
+{"type":"before","callId":"fixture@58","stepId":"fixture@58","parentId":"hook@56","startTime":52749.758,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@59","stepId":"pw:api@59","parentId":"fixture@58","startTime":53453.663,"class":"Test","method":"pw:api","title":"Close context","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@59","endTime":58524.965,"annotations":[]}
+{"type":"after","callId":"fixture@58","endTime":58525.248,"annotations":[]}
+{"type":"before","callId":"fixture@68","stepId":"fixture@68","parentId":"hook@56","startTime":58532.438,"class":"Test","method":"fixture","title":"Fixture \"baseURL\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@68","endTime":58532.664,"annotations":[]}
+{"type":"before","callId":"fixture@69","stepId":"fixture@69","parentId":"hook@56","startTime":58532.721,"class":"Test","method":"fixture","title":"Fixture \"userAgent\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@69","endTime":58532.8,"annotations":[]}
+{"type":"before","callId":"fixture@71","stepId":"fixture@71","parentId":"hook@56","startTime":58533.365,"class":"Test","method":"fixture","title":"Fixture \"viewport\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@71","endTime":58533.438,"annotations":[]}
+{"type":"before","callId":"fixture@79","stepId":"fixture@79","parentId":"hook@56","startTime":58537.038,"class":"Test","method":"fixture","title":"Fixture \"isMobile\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@79","endTime":58537.104,"annotations":[]}
+{"type":"before","callId":"fixture@83","stepId":"fixture@83","parentId":"hook@56","startTime":58538.662,"class":"Test","method":"fixture","title":"Fixture \"hasTouch\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@83","endTime":58538.722,"annotations":[]}
+{"type":"before","callId":"fixture@86","stepId":"fixture@86","parentId":"hook@56","startTime":58540.319,"class":"Test","method":"fixture","title":"Fixture \"deviceScaleFactor\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@86","endTime":58540.426,"annotations":[]}
+{"type":"after","callId":"hook@56","endTime":58544.762,"annotations":[]}
